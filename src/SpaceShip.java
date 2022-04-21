@@ -59,7 +59,7 @@ public class SpaceShip {
 
     public int speedUp() {
 
-        velocidadX = velocidadX+aceleracion;
+        velocidadX = velocidadX+1;
         return velocidadX;
     }
 

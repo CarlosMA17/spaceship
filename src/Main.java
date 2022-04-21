@@ -138,32 +138,30 @@ public class Main {
         naveFinal = new SpaceShip(naveFinal.nombre, naveFinal.matricula, naveFinal.aceleracion, naveFinal.velocidadX, nave.velocidadY);
         System.out.println("si desea aumentar la velocidad pulse 'w' si desea reducirla pulse 's'\n" +
                 "el freno de emergencia es la 'f' y para salir pulse 'q'\n\n" +
-                "introduzca cualquier tecla para iniciar...\n\n");
+                "introduzca cualquier tecla para encender el control manual...\n\n");
         sc = new Scanner(System.in);
         String nada = sc.nextLine();
-        String input = "q";
-        while (input == "q") {
+        String salida = "S";
+       while (salida != "q") {
             System.out.println(naveFinal.toString());
             System.out.println(naveFinal.interfaz());
-            String salida = "";
+
+            int velocidad = 0;
             sc = new Scanner(System.in);
-            input = sc.nextLine();
+            String input = sc.nextLine();
             if (input == "q") {
                 salida = "q";
             }
             else if (input == "w") {
-                int velocidad = naveFinal.speedUp();
-                salida = "";
+                velocidad = naveFinal.speedUp();
+                naveFinal = new SpaceShip(naveFinal.nombre, naveFinal.matricula, naveFinal.aceleracion, velocidad, nave.velocidadY);
             } else if (input == "s") {
-                int velocidad = naveFinal.brake();
-                salida = "";
+                velocidad = naveFinal.brake();
             } else if (input == "f") {
-                int velocidad = naveFinal.emergencyStop();
-                salida = "";
+                velocidad = naveFinal.emergencyStop();
             }
-            naveFinal = new SpaceShip(naveFinal.nombre, naveFinal.matricula, naveFinal.aceleracion, naveFinal.velocidadX, nave.velocidadY);
-            naveFinal = new Cargo(naveFinal.nombre, naveFinal.matricula, naveFinal.aceleracion, naveFinal.velocidadX, nave.velocidadY, ((Cargo) nave).cargo);
-            input = salida;
+           System.out.println(velocidad);
+            naveFinal = new SpaceShip(naveFinal.nombre, naveFinal.matricula, naveFinal.aceleracion, velocidad, nave.velocidadY);
         }
         System.out.println("la nave ha aterrizado, esperemos que le haya gustado su viaje");
     }
