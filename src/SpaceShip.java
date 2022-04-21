@@ -9,7 +9,7 @@ public class SpaceShip {
     public int direccionX = 1;
     public int direccionY = 0;
 
-    public SpaceShip(String nombre, String matricula, float aceleracion, int velocidadX, int velocidadY) {
+    public SpaceShip(String nombre, String matricula, int aceleracion, int velocidadX, int velocidadY) {
         this.nombre = nombre;
         this.matricula = matricula;
         this.aceleracion = aceleracion;
