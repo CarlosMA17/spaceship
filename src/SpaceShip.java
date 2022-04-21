@@ -107,9 +107,9 @@ public class SpaceShip {
                 "       .";
     }
     public String interfaz() {
-        return  "          ---velocidad-----___---=======---___-----matricula---\n" +
-                "       (=__\\ "+ velocidadX +"     / ..  nombre  .. \\    "+ matricula +"  /__=)\n" +
-                "                        ---\\__"+ nombre +"__/---";
+        return  "         --v-velocidad-v----___---=======---___----v-matricula-v--\n" +
+                "       (=__\\       "+ velocidadX +"       / .. v nombre v .. \\    "+ matricula +"  /__=)\n" +
+                "                            ---\\__"+ nombre +"__/---";
     }
 
 }

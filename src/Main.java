@@ -33,13 +33,21 @@ public class Main {
                         "el numero maximo de containers que se puede llevar son 10");
                 sc = new Scanner(System.in);
                 int carga = sc.nextInt();
+                if (carga >10) {
+                    System.out.println("la carga ha alcanzado su numero maximo, se quedaran solo 10 containers");
+                    carga = 10;
+                }
+                nave = new Cargo(nombre, matricula, aceleracion, 1, 0, carga);
+                System.out.println("nombre: " + nave.nombre + "\n" +
+                        "matricula " + nave.matricula + "\naceleracion " + nave.aceleracion + "\nvelocidad " + nave.velocidadX +
+                        "\npeso: " + ((Cargo) nave).cargo + "\n\n");
 
                 System.out.println("la nave saldra desde la tierra, coordenada 0,0\n\n" +
-                        "iniciando ignicion...\n");
-
-                nave = new Cargo(nombre, matricula, aceleracion, 0, 0, carga);
-
+                        "introduzca cualquier tecla para la ignicion...\n");
+                sc = new Scanner(System.in);
+                String nada = sc.nextLine();
                 System.out.println(nave.toString());
+
                 System.out.println("\n...\n\n" +
                         "la nave ha aterrizado, desea añadir o retirar containers? 1=si 2=no");
                 sc = new Scanner(System.in);
@@ -52,30 +60,41 @@ public class Main {
                     int peso = carga;
                     if (respuesta == 1) {
                         peso = ((Cargo) nave).load();
+                        System.out.println("\n...\n\nse ha añadido un container a la nave");
                         if (peso == 11) {
-                            String mensaje = "el cargo " + nave.nombre + " esta completo, no se puede añadir mas";
+                            String mensaje = "el cargo " + nave.nombre + " esta completo, no se puede añadir mas, se quedara en 10";
                             peso = 10;
                             System.out.println(mensaje);
                         }
-                        System.out.println("\n...\n\nse ha añadido un container a la nave");
                     }
                     nave = new Cargo(nombre, matricula, aceleracion, nave.velocidadX, nave.velocidadY, peso);
-                    System.out.println("desea retirar un container del cargo?");
+                    System.out.println("desea retirar un container del cargo? pulse 1");
                     sc = new Scanner(System.in);
                     respuesta = sc.nextInt();
 
                     if (respuesta == 1) {
                         peso = ((Cargo) nave).unload();
+                        System.out.println("se ha retirado un container de la nave");
                         if (peso == 12) {
                             String mensaje = "el cargo " + nave.nombre + " esta vacio, no se puede retirar mas";
                             peso = 0;
                             System.out.println(mensaje);
                         }
                         nave = new Cargo(nombre, matricula, aceleracion, nave.velocidadX, nave.velocidadY, peso);
+                        System.out.println("nombre: " + nave.nombre + "\n" +
+                                "matricula " + nave.matricula + "\naceleracion " + nave.aceleracion + "\nvelocidad " + nave.velocidadX +
+                                "\npeso: " + ((Cargo) nave).cargo + "\n\n");
                     }
+                    System.out.println("la nave saldra desde el puerto de exportacion, coordenada 0,0\n\n" +
+                            "introduzca cualquier tecla para la ignicion...\n");
+                    sc = new Scanner(System.in);
+                    nada = sc.nextLine();
+
+                    System.out.println(nave.toString());
+                    System.out.println(nave.interfaz());
+
                 }
 
-                //--------interfaz de la nave----------//
                 break;
             case 2:
                 System.out.println("introduzca el nombre de su nave galactica de transporte:\n");
@@ -90,29 +109,29 @@ public class Main {
                 sc = new Scanner(System.in);
                 aceleracion = sc.nextInt();
 
-                System.out.println("la nave saldra desde la tierra, coordenada 0,0");
+                naveTransporte = new SpaceShip(nombre, matricula, aceleracion, 1, 0);
+                System.out.println("nombre: " + naveTransporte.nombre + "\n" +
+                        "matricula " + naveTransporte.matricula + "\naceleracion " + naveTransporte.aceleracion + "\nvelocidad " + naveTransporte.velocidadX);
 
-                naveTransporte = new SpaceShip(nombre, matricula, aceleracion, 0, 0);
-                System.out.println(nave.toString());
+                System.out.println("la nave saldra desde la tierra, coordenada 0,0\n\n" +
+                        "introduzca cualquier tecla para iniciar la ignicion...\n\n");
+                sc = new Scanner(System.in);
+                nada = sc.nextLine();
 
-                naveTransporte.interfaz();
+                System.out.println(naveTransporte.toString()+"\n\n");
+                System.out.println(naveTransporte.interfaz());
 
-                System.out.println("desea añadir un container al cargo?");
 
-                //--------interfaz de la nave----------//
                 break;
-        }
-        System.out.println(naveTransporte.interfaz());
-            int respuesta=1;
-        if (respuesta == 1) {
+            }
+            SpaceShip naveFinal;
+        if (decision == 1) {
+            naveFinal = nave;
 
         }
-
-        System.out.println("nombre: " + nave.nombre + "\n" +
-                "matricula " + nave.matricula + "\naceleracion " + nave.aceleracion + "\nvelocidad " + nave.velocidadX +
-                "\npeso: " + ((Cargo) nave).cargo + "\n\n");
-
-        System.out.println(nave.toString());
+        else if (decision == 2) {
+            naveFinal = naveTransporte;
+        }
 
     }
 }
