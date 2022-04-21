@@ -13,48 +13,51 @@ public class Main {
 
         SpaceShip nave = new Cargo(null, null, 0, 0,0, 0);
 
-        if (respuesta == 1) {
-            System.out.println("introduzca el nombre de su nave galactica de carga:\n\n");
-            sc = new Scanner(System.in);
-            String nombre = sc.nextLine();
+        switch (respuesta) {
 
-            System.out.println("introduzca la matricula galactica de su nave:\n\n");
-            sc = new Scanner(System.in);
-            String matricula = sc.nextLine();
+            case 1:
+                System.out.println("introduzca el nombre de su nave galactica de carga:\n\n");
+                sc = new Scanner(System.in);
+                String nombre = sc.nextLine();
 
-            System.out.println("introduzca la la velocidad de aceleracion que quiere que tenga su nave:\n\n");
-            sc = new Scanner(System.in);
-            int aceleracion = sc.nextInt();
+                System.out.println("introduzca la matricula galactica de su nave:\n\n");
+                sc = new Scanner(System.in);
+                String matricula = sc.nextLine();
 
-            System.out.println("introduzca el numero de containers que quiere llevar en la nave,\n" +
-                    "el numero maximo de containers que se puede llevar son 10");
-            sc = new Scanner(System.in);
-            int carga = sc.nextInt();
+                System.out.println("introduzca la la velocidad de aceleracion que quiere que tenga su nave:\n\n");
+                sc = new Scanner(System.in);
+                int aceleracion = sc.nextInt();
 
-            System.out.println("la nave saldra desde la tierra, coordenada 0,0");
+                System.out.println("introduzca el numero de containers que quiere llevar en la nave,\n" +
+                        "el numero maximo de containers que se puede llevar son 10");
+                sc = new Scanner(System.in);
+                int carga = sc.nextInt();
 
-            nave = new Cargo(nombre, matricula, aceleracion, 0 , 0, carga);
+                System.out.println("la nave saldra desde la tierra, coordenada 0,0");
 
-            System.out.println(nave.toString());
-        }
-        else if (respuesta == 2) {
+                nave = new Cargo(nombre, matricula, aceleracion, 0 , 0, carga);
+
+                System.out.println(nave.toString());
+                break;
+        case 2: {
             System.out.println("introduzca el nombre de su nave galactica de transporte:\n\n");
             sc = new Scanner(System.in);
-            String nombre = sc.nextLine();
+            nombre = sc.nextLine();
 
             System.out.println("introduzca la matricula galactica de su nave:\n\n");
             sc = new Scanner(System.in);
-            String matricula = sc.nextLine();
+            matricula = sc.nextLine();
 
             System.out.println("introduzca la la velocidad de aceleracion que quiere que tenga su nave:\n\n");
             sc = new Scanner(System.in);
-            int aceleracion = sc.nextInt();
+            aceleracion = sc.nextInt();
 
             System.out.println("la nave saldra desde la tierra, coordenada 0,0");
 
             nave = new SpaceShip(nombre, matricula, aceleracion, 0, 0);
             System.out.println(nave.toString());
         }
+        System.out.println(nave.nombre);
 
         System.out.println("desea añadir un container al cargo?");
 
