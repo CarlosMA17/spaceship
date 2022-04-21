@@ -63,6 +63,16 @@ public class SpaceShip {
         return velocidadX;
     }
 
+    public int brake() {
+        velocidadX = velocidadX-1;
+        return velocidadX;
+    }
+
+    public int emergencyStop() {
+        velocidadX = 0;
+        return velocidadX;
+    }
+
     @Override
     public String toString() {
 
