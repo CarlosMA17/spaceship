@@ -73,7 +73,6 @@ public class SpaceShip {
         return velocidadX;
     }
 
-    @Override
     public String toString() {
 
         return "       !\n" +
