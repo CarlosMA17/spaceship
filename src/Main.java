@@ -8,12 +8,13 @@ public class Main {
                 "de que tipo quiere que sea su nave? escriba como respuesta el numero al que corresponda la nave\n" +
                 "1-Nave espacial de carga     2-Nave espacial de transporte");
         Scanner sc = new Scanner(System.in);
-        int respuesta = sc.nextInt();
+        int decision = sc.nextInt();
 
 
         SpaceShip nave = new Cargo(null, null, 0, 0, 0, 0);
+        SpaceShip naveTransporte = new SpaceShip(null, null, 0, 0, 0);
 
-        switch (respuesta) {
+        switch (decision) {
 
             case 1:
                 System.out.println("introduzca el nombre de su nave galactica de carga:\n");
@@ -42,7 +43,7 @@ public class Main {
                 System.out.println("\n...\n\n" +
                         "la nave ha aterrizado, desea añadir o retirar containers? 1=si 2=no");
                 sc = new Scanner(System.in);
-                respuesta = sc.nextInt();
+                int respuesta = sc.nextInt();
 
                 if (respuesta == 1) {
                     System.out.println("desea añadir uno o retirarlo? 1=añadir 2=retirar");
@@ -91,18 +92,18 @@ public class Main {
 
                 System.out.println("la nave saldra desde la tierra, coordenada 0,0");
 
-                nave = new SpaceShip(nombre, matricula, aceleracion, 0, 0);
+                naveTransporte = new SpaceShip(nombre, matricula, aceleracion, 0, 0);
                 System.out.println(nave.toString());
 
-                System.out.println(nave.nombre);
+                naveTransporte.interfaz();
 
                 System.out.println("desea añadir un container al cargo?");
 
                 //--------interfaz de la nave----------//
                 break;
         }
-
-
+        System.out.println(naveTransporte.interfaz());
+            int respuesta=1;
         if (respuesta == 1) {
 
         }

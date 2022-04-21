@@ -106,5 +106,10 @@ public class SpaceShip {
                 "       .\n" +
                 "       .";
     }
+    public String interfaz() {
+        return  "          ---velocidad-----___---=======---___-----matricula---\n" +
+                "       (=__\\ "+ velocidadX +"     / ..  nombre  .. \\    "+ matricula +"  /__=)\n" +
+                "                        ---\\__"+ nombre +"__/---";
+    }
 
 }
