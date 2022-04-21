@@ -1,7 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
-        SpaceShip nave = new SpaceShip("nave1", "1421bdd", 1, 1, 0);
+        Cargo nave = new Cargo("nave", "1235bdj", 1, 1, 0, 10);
 
 
     }
