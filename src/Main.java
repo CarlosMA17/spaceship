@@ -2,13 +2,16 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
 
         System.out.println("bienvenido al simulador de naves espaciales\n\n" +
                 "de que tipo quiere que sea su nave? escriba como respuesta el numero al que corresponda la nave\n" +
                 "1-Nave espacial de carga     2-Nave espacial de transporte");
         Scanner sc = new Scanner(System.in);
         int respuesta = sc.nextInt();
+
+
+        SpaceShip nave = new Cargo(null, null, 0, 0,0, 0);
 
         if (respuesta == 1) {
             System.out.println("introduzca el nombre de su nave galactica de carga:\n\n");
@@ -23,14 +26,35 @@ public class Main {
             sc = new Scanner(System.in);
             int aceleracion = sc.nextInt();
 
+            System.out.println("introduzca el numero de containers que quiere llevar en la nave,\n" +
+                    "el numero maximo de containers que se puede llevar son 10");
+            sc = new Scanner(System.in);
+            int carga = sc.nextInt();
 
-            Cargo naveCarga = new Cargo(, , , , , );
+            System.out.println("la nave saldra desde la tierra, coordenada 0,0");
+
+            nave = new Cargo(nombre, matricula, aceleracion, 0 , 0, carga);
+
+            System.out.println(nave.toString());
         }
         else if (respuesta == 2) {
-            SpaceShip naveTransporte = new SpaceShip()
-        }
-        System.out.println(nave.toString());
+            System.out.println("introduzca el nombre de su nave galactica de transporte:\n\n");
+            sc = new Scanner(System.in);
+            String nombre = sc.nextLine();
 
+            System.out.println("introduzca la matricula galactica de su nave:\n\n");
+            sc = new Scanner(System.in);
+            String matricula = sc.nextLine();
+
+            System.out.println("introduzca la la velocidad de aceleracion que quiere que tenga su nave:\n\n");
+            sc = new Scanner(System.in);
+            int aceleracion = sc.nextInt();
+
+            System.out.println("la nave saldra desde la tierra, coordenada 0,0");
+
+            nave = new SpaceShip(nombre, matricula, aceleracion, 0, 0);
+            System.out.println(nave.toString());
+        }
 
         System.out.println("desea añadir un container al cargo?");
 
