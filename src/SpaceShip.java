@@ -1,7 +1,7 @@
 public class SpaceShip {
     public String nombre;
     public String matricula;
-    public float aceleracion;
+    public int aceleracion;
     public int velocidadX = 1;
     public int velocidadY = 0;
     public float coordenadaX = 0.0f;
@@ -37,7 +37,7 @@ public class SpaceShip {
         return aceleracion;
     }
 
-    public void setAceleracion(float aceleracion) {
+    public void setAceleracion(int aceleracion) {
         this.aceleracion = aceleracion;
     }
 
@@ -59,7 +59,7 @@ public class SpaceShip {
 
     public int speedUp() {
 
-        velocidadX = velocidadX+1;
+        velocidadX = velocidadX+aceleracion;
         return velocidadX;
     }
 

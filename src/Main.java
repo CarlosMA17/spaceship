@@ -3,15 +3,39 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Cargo nave = new Cargo("nave", "1235bdj", 1, 1, 0, 10);
 
+        System.out.println("bienvenido al simulador de naves espaciales\n\n" +
+                "de que tipo quiere que sea su nave? escriba como respuesta el numero al que corresponda la nave\n" +
+                "1-Nave espacial de carga     2-Nave espacial de transporte");
+        Scanner sc = new Scanner(System.in);
+        int respuesta = sc.nextInt();
+
+        if (respuesta == 1) {
+            System.out.println("introduzca el nombre de su nave galactica de carga:\n\n");
+            sc = new Scanner(System.in);
+            String nombre = sc.nextLine();
+
+            System.out.println("introduzca la matricula galactica de su nave:\n\n");
+            sc = new Scanner(System.in);
+            String matricula = sc.nextLine();
+
+            System.out.println("introduzca la la velocidad de aceleracion que quiere que tenga su nave:\n\n");
+            sc = new Scanner(System.in);
+            int aceleracion = sc.nextInt();
+
+
+            Cargo naveCarga = new Cargo(, , , , , );
+        }
+        else if (respuesta == 2) {
+            SpaceShip naveTransporte = new SpaceShip()
+        }
         System.out.println(nave.toString());
 
 
         System.out.println("desea añadir un container al cargo?");
 
-        Scanner sc = new Scanner(System.in);
-        int respuesta = sc.nextInt();
+        sc = new Scanner(System.in);
+        respuesta = sc.nextInt();
         if (respuesta == 1) {
             int peso = nave.load();
             if (peso == 11){
