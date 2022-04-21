@@ -2,7 +2,7 @@ public class Cargo extends SpaceShip {
     public int cargo;
     final public int cargoMax = 10;
 
-    public Cargo(String nombre, String matricula, float aceleracion, int velocidadX, int velocidadY, int cargo) {
+    public Cargo(String nombre, String matricula, int aceleracion, int velocidadX, int velocidadY, int cargo) {
         super(nombre, matricula, aceleracion, velocidadX, velocidadY);
         this.cargo = cargo;
     }
