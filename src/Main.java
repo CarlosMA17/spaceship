@@ -166,8 +166,6 @@ public class Main {
                 naveFinal = new SpaceShip(naveFinal.nombre, naveFinal.matricula, naveFinal.aceleracion, velocidad, nave.velocidadY);
 
             }
-           System.out.println(velocidad);
-           System.out.println(salida);
        }
         System.out.println("la nave ha aterrizado, esperemos que le haya gustado su viaje");
     }
