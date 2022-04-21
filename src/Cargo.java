@@ -16,7 +16,7 @@ public class Cargo extends SpaceShip {
     }
 
     public int load() {
-        if (cargo >= cargoMax) {
+        if (cargo < cargoMax) {
             cargo = cargo + 1;
             return cargo;
         }
@@ -27,7 +27,7 @@ public class Cargo extends SpaceShip {
     }
 
     public int unload() {
-        if (cargo <= 0) {
+        if (cargo > 0) {
             cargo = cargo - 1;
             return cargo;
         }

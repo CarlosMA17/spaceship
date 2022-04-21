@@ -7,19 +7,21 @@ public class Main {
 
         System.out.println(nave.toString());
 
+
         System.out.println("desea añadir un container al cargo?");
 
         Scanner sc = new Scanner(System.in);
-        String respuesta = sc.nextLine();
-        if (respuesta == "si"){
+        int respuesta = sc.nextInt();
+        if (respuesta == 1) {
 
-            int cargo = nave.load();
-            if (cargo == 11){
+            int peso = nave.load();
+            if (peso == 11){
                 String mensaje = "el cargo "+ nave.nombre +" esta completo, no se puede añadir mas";
-                cargo = 10;
+                peso = 10;
+                System.out.println(mensaje);
 
             }
-            nave = new Cargo("nave", "1235bdj", 1, 1, 0, cargo);
+            nave = new Cargo("nave", "1235bdj", 1, 1, 0, peso);
         }
 
 
