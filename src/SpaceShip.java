@@ -2,7 +2,7 @@ public class SpaceShip {
     public String nombre;
     public String matricula;
     public float aceleracion;
-    public int velocidadX = 0;
+    public int velocidadX = 1;
     public int velocidadY = 0;
     public float coordenadaX = 0.0f;
     public float coordenadaY = 0.0f;
@@ -67,8 +67,8 @@ public class SpaceShip {
     public String toString() {
 
         return "       !\n" +
-                "                !\n" +
-                "                ^\n" +
+                "       !\n" +
+                "       ^\n" +
                 "      / \\\n" +
                 "     /___\\\n" +
                 "    |=   =|\n" +
@@ -87,14 +87,15 @@ public class SpaceShip {
                 "|  / ^ | ^ \\  |\n" +
                 "| /  ( | )  \\ |\n" +
                 "|/   ( | )   \\|\n" +
-                "        ((   ))\n" +
-                "        ((  :  ))\n" +
-                "        ((  :  ))\n" +
-                "        ((   ))\n" +
-                "        (( ))\n" +
-                "        ( )\n" +
-                "                .\n" +
+                "    ((   ))\n" +
+                "   ((  :  ))\n" +
+                "   ((  :  ))\n" +
+                "    ((   ))\n" +
+                "     (( ))\n" +
+                "      ( )\n" +
+                "       .\n" +
                 "       .\n" +
                 "       .";
     }
+
 }
