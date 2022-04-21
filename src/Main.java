@@ -33,7 +33,7 @@ public class Main {
                         "el numero maximo de containers que se puede llevar son 10");
                 sc = new Scanner(System.in);
                 int carga = sc.nextInt();
-                if (carga >10) {
+                if (carga > 10) {
                     System.out.println("la carga ha alcanzado su numero maximo, se quedaran solo 10 containers");
                     carga = 10;
                 }
@@ -118,20 +118,55 @@ public class Main {
                 sc = new Scanner(System.in);
                 nada = sc.nextLine();
 
-                System.out.println(naveTransporte.toString()+"\n\n");
+                System.out.println(naveTransporte.toString() + "\n\n");
                 System.out.println(naveTransporte.interfaz());
 
 
                 break;
             }
-            SpaceShip naveFinal;
+
+
+        SpaceShip naveFinal = nave;
         if (decision == 1) {
             naveFinal = nave;
+            naveFinal = new Cargo(naveFinal.nombre, naveFinal.matricula, naveFinal.aceleracion, naveFinal.velocidadX, nave.velocidadY, ((Cargo) nave).cargo);
 
-        }
-        else if (decision == 2) {
+        } else if (decision == 2) {
             naveFinal = naveTransporte;
+            naveFinal = new SpaceShip(naveFinal.nombre, naveFinal.matricula, naveFinal.aceleracion, naveFinal.velocidadX, nave.velocidadY);
         }
+        naveFinal = new SpaceShip(naveFinal.nombre, naveFinal.matricula, naveFinal.aceleracion, naveFinal.velocidadX, nave.velocidadY);
+        System.out.println("si desea aumentar la velocidad pulse '8' si desea reducirla pulse '2'\n" +
+                "el freno de emergencia es la '5' y para salir pulse '0'\n\n" +
+                "introduzca cualquier tecla para encender el control manual...\n\n");
+        sc = new Scanner(System.in);
+        String nada = sc.nextLine();
+        int velocidad = 0;
+        int salida = 2;
+       while (salida != 1) {
+            System.out.println(naveFinal.toString());
+            System.out.println(naveFinal.interfaz());
 
+
+            sc = new Scanner(System.in);
+            int input = sc.nextInt();
+            if (input == 0) {
+                salida = 1;
+            }
+            salida = salida;
+            if (input == 8) {
+                velocidad = naveFinal.speedUp();
+                naveFinal = new SpaceShip(naveFinal.nombre, naveFinal.matricula, naveFinal.aceleracion, velocidad, nave.velocidadY);
+            } else if (input == 2) {
+                velocidad = naveFinal.brake();
+                naveFinal = new SpaceShip(naveFinal.nombre, naveFinal.matricula, naveFinal.aceleracion, velocidad, nave.velocidadY);
+
+            } else if (input == 5) {
+                velocidad = naveFinal.emergencyStop();
+                naveFinal = new SpaceShip(naveFinal.nombre, naveFinal.matricula, naveFinal.aceleracion, velocidad, nave.velocidadY);
+
+            }
+       }
+        System.out.println("la nave ha aterrizado, esperemos que le haya gustado su viaje");
     }
 }
